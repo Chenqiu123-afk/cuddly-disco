@@ -2,7 +2,6 @@ while True:
     print("=====================")
     print("欢迎你的到来")
     print("=====================")
-
     print("1.奇数/偶数分类")
     print("2.小数/中数/大数分类")
     print("3.退出程序")
@@ -27,7 +26,11 @@ while True:
             except ValueError:
                 print("输入错误,请输入有效数字")
 
-    nums = list(range(start,end+1))        
+        nums = list(range(start,end+1))
+
+    if start > end:
+        print("输入错误")
+        continue        
     
     count_odd = 0
     count_even = 0
@@ -47,7 +50,7 @@ while True:
         print(f"偶数一共有：{count_even}个")
         print(f"奇数一共有{count_odd}个")        
     elif choice == "2":
-        print("{n===大小区间分类===")
+        print("\n===大小区间分类===")
         for n in nums:
             if n <5:
                 print(f"{n}是小数")
@@ -64,3 +67,4 @@ while True:
     else:
         print("输入错误,请选择1/2/3")
     print("\n==============\n")                       
+    input("按回车返回菜单")
